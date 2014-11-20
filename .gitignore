@@ -1,6 +1,10 @@
+#emacs
 *~
 .\#*
 \#*
 auto\*
 
+#Latex
 *.dvi
+*.log
+*out

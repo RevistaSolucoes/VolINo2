@@ -1,0 +1,141 @@
+\begin{multicols}{2}
+
+\cappar
+
+Para este número os planteamos un desafío que pueden encontrar en el libro de Matemagia de Adrián Paenza y un reto ajedrecista. ¡Esperamos que se diviertan! 
+
+\section*{La balanza}
+Suponga que usted tiene una balanza con dos platillos y no tiene marcador de este modo usted puede decidir si un objeto pesa más que otro poniendo uno de cada lado y viendo si la balanza se inclina hacia un lado o hacia el otro. Dicho esto, suponga además que yo le doy cuatro pesas. Cada una de ellas tiene, justamente, un peso diferente:
+\begin{itemize}
+\item 1 kg.
+\item 3 kgs.
+\item 9 kgs.
+\item 27 kgs.
+\end{itemize}
+
+Ahora, yo le alcanzo 40 cajas iguales (en apariencia), pero todas con diferente peso, de manera tal que haya una caja que pesa
+1 kilo, otra 2, una tercera que pesa 3 kilos... y así siguiendo hasta llegar a una que pesa exactamente 40 kilos.
+Si no hay ninguna manera de distinguir las cajas entre sí, y usted cuenta con los elementos que yo describí anteriormente
+(la balanza de dos platillos y las cuatro pesas), ¿cómo hacer para poder decidir el peso de cada caja?
+
+\section*{Ajedrez}
+
+Te ofrecemos un reto ajedrecístico. En esta famosa partida, que te desvelaremos en el siguiente número, 
+las blancas juegan y ganan. ¿Podrías encontrar la espectacular jugada ganadora?
+
+\newgame
+\mainline{1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Nxc3 Bb4 5. Bc4 Qe7 6. Ne2 Nf6 7. O-O O-O 8. Bg5 Qe5 9. Bxf6 Qxf6 10. Nd5 Qd6 11. e5 Qc5 12. Rc1 Qa5 13. a3 Bxa3 14. bxa3 c6 15. Ne7 Kh8 16. Qd6 Qd8 17. Nd4 b6 18. Rc3 c5 19. Ndf5 Ba6}
+% 20. Qg6}
+\begin{center}
+\showboard 
+\end{center}
+
+
+{\bf Las soluciones en el próximo número.}
+\section*{\textcolor{redsol}{Soluciones del número anterior}}
+\subsection*{El desafío: la cadena de 23 eslaboles}
+¿Qué tal te fue con este desafío? Seguro llegaste a una solución. ¿Era la óptima? Pues ahí va una de las respuestas óptimas. El número mínimo de cortes es cuatro. Imaginemos que nuestra cadena la representamos como una lista de 23 números (esto es $1-2-3-4-5-6-7-8-9-\dots-20-21-22-23$). Los siguientes cuatros cortes nos permiten tener todos los números posibles del 1 al 23,
+\begin{dinglist}{34}
+\item {\bf Trozo 1:} $1-2-3$
+\item {\bf Trozo 2:} $4$
+\item {\bf Trozo 3:} $5-6-7-8-9-10$
+\item {\bf Trozo 4:} $11$
+\item {\bf Trozo 5:} $12-13-14-15-16-17-18-19-20-21-22-23$
+\end{dinglist}
+
+Tenemos dos segmentos de logitud 1, un segmento de longitud tres, un segmento de longitud 6 y otro de longitud 12.  
+
+Veamos que con esta partición podemos cumplir con la señora todos los días. 
+
+\begin{dinglist}{42}
+\item {\bf Día 1:} $4$
+\item {\bf Día 2:} $4$ y $11$
+\item {\bf Día 3:} $1-2-3$
+\item {\bf Día 4:} $1-2-3$ y $4$
+\item {\bf Día 5:} $1-2-3$, $4$ y $11$
+\item {\bf Día 6:} $5-6-7-8-9-10$
+\item {\bf Dia 7:} $5-6-7-8-9-10$ y $4$
+\item {\bf Día 8:} $5-6-7-8-9-10$, $4$ y $11$
+\item {\bf Día 9:} $5-6-7-8-9-10$ y $1-2-3$
+\item {\bf Día 10:} $5-6-7-8-9-10$, $1-2-3$ y $4$
+\item {\bf Día 11:}  $5-6-7-8-9-10$, $1-2-3$, $4$ y $11$
+\item {\bf Día 12:} $12-13-14-15-16-17-18-19-20-21-22-23$
+\item {\emph \dots, el resto los dejamos para que los compruebes}
+\end{dinglist}
+
+Con esto tendríamos demostrado que la solución propuesta es válida, pero ¿es la óptima? Esto hay que demostrarlo y para ello tenemos que ver que con tres cortes, es decir cuatro trozos no es posible generar todos los números del 1 al 23. Vamos a ver que con cuatro trozos se pueden generar 15 números y no más. Imaginemos que las longitudes de las cuatro cadenas son $l_1$, $l_2$, $l_3$ y $l_4$. Las cantidades que el estudiante podría pagar a la señora serían las siguientes: $l_1$, $l_2$, $l_3$, $l_4$, $l_1+l_2$, $l_1+l_3$, $l_1+l_4$, $l_2+l_3$, $l_2+l_4$, $l_3+l_4$,
+$l_1+l_2+l_3$, $l_1+l_2+l_4$, $l_1+l_3+l_4$, $l_2+l_3+l_4$ y $l_1+l_2+l_3+l_4$. Esto es un total de 15 números y no 23. 
+
+Ahora sí queda demostrado que nuestra solución es válida y óptima.
+
+\subsection*{Sudoku}
+
+\begin{center}
+  \begin{tikzpicture}[scale=.9]
+  %\begin{scope}
+  %  \draw (0, 0) grid (9, 9);
+  %  \draw[very thick, scale=3] (0, 0) grid (3, 3);
+
+  %  \setcounter{row}{1}
+  %  \setrow { }{2}{ }  {5}{ }{1}  { }{9}{ }
+  %  \setrow {8}{ }{ }  {2}{ }{3}  { }{ }{6}
+  %  \setrow { }{3}{ }  { }{6}{ }  { }{7}{ }
+
+  %  \setrow { }{ }{1}  { }{ }{ }  {6}{ }{ }
+  %  \setrow {5}{4}{ }  { }{ }{ }  { }{1}{9}
+  %  \setrow { }{ }{2}  { }{ }{ }  {7}{ }{ }
+
+  %  \setrow { }{9}{ }  { }{3}{ }  { }{8}{ }
+  %  \setrow {2}{ }{ }  {8}{ }{4}  { }{ }{7}
+  %  \setrow { }{1}{ }  {9}{ }{7}  { }{6}{ }
+
+  %  \node[anchor=center] at (4.5, -0.5) {Soluciones Sudoku 1};
+  %\end{scope}
+
+   \begin{scope}[xshift=12cm]
+    \draw (0, 0) grid (9, 9);
+    \draw[very thick, scale=3] (0, 0) grid (3, 3);
+
+    \setcounter{row}{1}
+    \setrow { }{2}{ }  {5}{ }{1}  { }{9}{ }
+    \setrow {8}{ }{ }  {2}{ }{3}  { }{ }{6}
+    \setrow { }{3}{ }  { }{6}{ }  { }{7}{ }
+
+    \setrow { }{ }{1}  { }{ }{ }  {6}{ }{ }
+    \setrow {5}{4}{ }  { }{ }{ }  { }{1}{9}
+    \setrow { }{ }{2}  { }{ }{ }  {7}{ }{ }
+
+    \setrow { }{9}{ }  { }{3}{ }  { }{8}{ }
+    \setrow {2}{ }{ }  {8}{ }{4}  { }{ }{7}
+    \setrow { }{1}{ }  {9}{ }{7}  { }{6}{ }
+
+    \node[anchor=center] at (4.5, -0.5) {Sudoku resuelto};
+    \begin{scope}[blue, font=\sffamily\slshape]
+      \setcounter{row}{1}
+      \setrow {4}{ }{6}  { }{7}{ }  {3}{ }{8}
+      \setrow { }{5}{7}  { }{9}{ }  {1}{4}{ }
+      \setrow {1}{ }{9}  {4}{ }{8}  {2}{ }{5}
+
+      \setrow {9}{7}{ }  {3}{8}{5}  { }{2}{4}
+      \setrow { }{ }{3}  {7}{2}{6}  {8}{ }{ }
+      \setrow {6}{8}{ }  {1}{4}{9}  { }{5}{3}
+
+      \setrow {7}{ }{4}  {6}{ }{2}  {5}{ }{1}
+      \setrow { }{6}{5}  { }{1}{ }  {9}{3}{ }
+      \setrow {3}{ }{8}  { }{5}{ }  {4}{ }{2}
+    \end{scope}
+\end{scope}
+
+\end{tikzpicture}\\
+\end{center}
+\end{multicols}
+
+\newpage
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "jugando"
+%%% End:
+
+
+
