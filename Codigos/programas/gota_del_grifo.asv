@@ -1,0 +1,38 @@
+% Vamos a crear una simulación de cuál es el diametro de una gota de agua 
+% cuando cae de un grifo con superficie en la boca del grifo S_0 (díametro 2*r_0), salida
+% del agua a una velocidad V_0 y el diametro de la gota lo haremos
+% en función de la distancia de la boca del grifo hacia donde cae.
+% Esto es una aplicación de la ecuación de Continuidad. Se puede demostrar
+% que:
+%
+%
+%      r=r(h)=r_0 (v_0^2/(v_0^2+2gh))^(1/4)
+%
+% g=9.81 m/s^2
+
+function gota_del_grifo(V,r)
+g=9.81;
+h=0:0.5:10;
+rh=r.*(V^2./(V^2+2*g*h)).^(1/4)
+subplot(1,3,1)
+plot(h,rh)
+subplot(1,2,2)
+[m n]=size(h);
+for i=1:n
+    [x,y]=circle(0,0,rh(i));
+    plot(x,y);
+    hold on
+    F(i) = getframe;
+end
+movie(F,10)
+
+subplot(1,2,3)
+[m n]=size(h);
+for i=1:n
+    [x,y]=circle(0,0,rh(i));
+    plot3(x,y,
+    hold on
+    F(i) = getframe;
+end
+movie(F,10)
+

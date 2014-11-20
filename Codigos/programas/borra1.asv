@@ -1,0 +1,8 @@
+
+rh=[1 2 3 4 5];
+axis
+for i=1:5
+    circle(0,0,rh(i))
+    F(i) = getframe;
+end
+movie(F)
